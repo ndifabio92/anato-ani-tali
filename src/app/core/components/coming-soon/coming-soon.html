@@ -1,28 +1,21 @@
 <div class="grid min-h-[60vh] place-items-center w-full bg-base-100 px-6">
 
-    <div class="max-w-md w-full text-center">
-        <h2 class="text-3xl font-bold text-primary mb-4 uppercase tracking-tight">
-            ¡Estamos en el quirófano!
-        </h2>
+  <div class="max-w-md w-full text-center">
+    <h2 class="text-3xl font-bold text-primary mb-4 uppercase tracking-tight">
+      ¡Estamos en el quirófano!
+    </h2>
 
-        <p class="text-primary mb-8 leading-relaxed">
-            Nuestros ingenieros y cirujanos digitales están terminando de ensamblar esta sección.
-        </p>
+    <p class="text-primary mb-8 leading-relaxed">
+      Nuestros ingenieros y cirujanos digitales están terminando de ensamblar esta sección.
+    </p>
 
-        <div class="mb-8">
-            <div class="flex justify-between mb-2 text-xs font-bold text-slate-400 uppercase">
-                <span>Progreso de la cirugía</span>
-                <span>75%</span>
-            </div>
-            <div class="w-full bg-slate-200 rounded-full h-2.5">
-                <div class="bg-blue-600 h-2.5 rounded-full animate-pulse" style="width: 75%">
-                </div>
-            </div>
-        </div>
-
-        <a [routerLink]="['/']" class="text-primary text-sm font-bold">
-            ← Volver a la Sala de Espera
-        </a>
+    <div class="mb-8">
+      <progress class="progress progress-primary w-56" style="width: 100%"></progress>
     </div>
+
+    <a [routerLink]="['/']" class="text-primary text-sm font-bold">
+      ← Volver a la Sala de Espera
+    </a>
+  </div>
 
 </div>
