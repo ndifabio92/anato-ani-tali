@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+    name: "anatomia";
+
+    /* 🎯 Colores principales */
+    --color-primary: #8B1A3A;
+    --color-primary-content: #FEF5E4;
+
+    --color-secondary: #F5ADAD;
+    --color-secondary-content: #4A0E20;
+
+    --color-accent: #F9C8C8;
+    --color-accent-content: #4A0E20;
+
+    --color-neutral: #4A0E20;
+    --color-neutral-content: #FEF5E4;
+
+    --color-base-100: #FEF5E4;
+    --color-base-200: #F9C8C8;
+    --color-base-300: #F5ADAD;
+    --color-base-content: #4A0E20;
+
+    /* opcionales */
+    --rounded-box: 1rem;
+    --rounded-btn: 9999px;
+}
