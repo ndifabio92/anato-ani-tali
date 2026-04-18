@@ -1,10 +1,7 @@
-import { Component, input } from '@angular/core';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'card-pricing',
   imports: [],
   templateUrl: './card-pricing.html',
 })
-export class CardPricing {
-  isPopular = input<boolean>(false);
-}
+export class CardPricing {}

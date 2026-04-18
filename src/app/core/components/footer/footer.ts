@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { environment } from '../../../../environments/environment';
+import { environment } from '@env/environment';
 import { TitleCasePipe } from '@angular/common';
 
 const envs = environment;

@@ -7,6 +7,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'contact', renderMode: RenderMode.Prerender },
   { path: 'courses', renderMode: RenderMode.Prerender },
   { path: 'not-found', renderMode: RenderMode.Prerender },
-  { path: 'admin/login', renderMode: RenderMode.Client }, // no necesita SSR/SSG
-  { path: '**', renderMode: RenderMode.Client }, // fallback siempre Client
+  { path: 'admin/login', renderMode: RenderMode.Client },
+  { path: '**', renderMode: RenderMode.Client },
 ];

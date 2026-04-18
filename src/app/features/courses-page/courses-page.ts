@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { Card } from '../../shared/ui/card/card';
-import { CardPricing } from '../../shared/ui/card-pricing/card-pricing';
-import { CoursesList } from './courses-list/courses-list';
+import { CourseList } from './course-list/course-list';
 
 @Component({
   selector: 'courses-page',
-  imports: [Card, CardPricing, CoursesList],
+  imports: [CourseList],
   templateUrl: './courses-page.html',
 })
 export default class CoursesPage {}

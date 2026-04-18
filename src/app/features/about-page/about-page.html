@@ -1,1 +1,58 @@
-<p>about-page works!</p>,
+<section>
+  <!-- HERO -->
+  <div class="overflow-hidden text-center bg-base-100">
+    <h1 class="text-3xl font-bold flex flex-1 justify-center text-primary">Sobre Nosotras</h1>
+    <h1 class="text-5xl font-normal text-neutral leading-tight mb-2 mt-4">
+      Tali <em class="italic text-primary">&</em> Ani
+    </h1>
+    <p class="text-xl font-light text-primary">
+      Docentes de Anatomía · Apasionadas por enseñar
+    </p>
+  </div>
+
+  <!-- AVATAR CARDS -->
+  <div class="flex justify-center gap-8 mt-8">
+    @for (teacher of teachers; track teacher.name) {
+    <div
+      class="bg-white border border-accent rounded-2xl p-6 text-center flex-1 max-w-xs shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-16 h-16 rounded-full {{teacher.bgColor}} flex items-center justify-center mx-auto mb-4">
+        <span class="text-2xl {{teacher.textColor}}">{{ teacher.initial }}</span>
+      </div>
+      <h3 class="text-xl font-semibold text-neutral mb-1">{{ teacher.name }}</h3>
+      <p class="text-lg text-primary font-light">{{ teacher.role }}</p>
+    </div>
+    }
+  </div>
+
+  <!-- HISTORIA -->
+  <div class="max-w-2xl mx-auto py-12">
+    <p class="font-medium tracking-widest uppercase text-primary mb-4 text-center">
+      Nuestra historia
+    </p>
+
+    <p class="font-light mb-5">
+      Somos Tali y Ani, docentes de anato desde hace tanto que ya perdimos la cuenta 🫣
+      Como ustedes, un día fuimos ingresantes y alumnas de primer año con
+      <strong class="font-medium text-primary">todas las incertidumbres que eso conlleva.</strong>
+    </p>
+
+    <p class="font-light mb-5">
+      Estuvimos muy emocionadas por nuestro primer día, pero como es natural en un ingresante,
+      tuvimos problemas en la organización de la materia, en no saber qué priorizar,
+      cómo estudiar todos los contenidos y, principalmente, que no se nos olvide.
+    </p>
+
+    <!-- QUOTE HIGHLIGHT -->
+    <div class="border-l-4 border-primary bg-accent rounded-r-xl px-6 py-5 my-8">
+      <p class="text-lg italic text-neutral leading-snug">
+        Por eso creamos un curso con todas las herramientas y recursos
+        que nos hubiese gustado tener a nosotras en su momento.
+      </p>
+    </div>
+
+    <p class="text-md text-center">
+      Queremos <strong class="font-medium text-primary">ayudarte</strong>, que apruebes,
+      pero que principalmente… <strong class="font-medium text-primary">que aprendas ✨💕</strong>
+    </p>
+  </div>
+</section>
