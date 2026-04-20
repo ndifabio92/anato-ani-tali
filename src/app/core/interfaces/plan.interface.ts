@@ -3,4 +3,5 @@ export interface Plan {
   title: string;
   description: string;
   includes: string[];
+  price: number;
 }
