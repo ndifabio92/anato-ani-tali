@@ -1,0 +1,42 @@
+<div class="flex gap-7">
+  <div class="card card-side w-full h-full bg-white/80 border border-base-200">
+    <div class="card-body gap-2.5">
+      <div class="flex justify-between flex-col md:flex-row gap-2.5">
+        <div class="flex gap-2.5 items-end justify-between">
+          <h1 class="text-2xl font-semibold text-primary">{{ course().title | titlecase }}</h1>
+          <h2 class="font-semibold" [class]="statusColor()">
+            {{status()}}
+          </h2>
+        </div>
+        <div>
+          <app-badge [title]="modality() | titlecase" size="lg" type="secondary" />
+        </div>
+      </div>
+      <div>
+        {{course().description}}
+      </div>
+
+      <div class="flex justify-between flex-col md:flex-row gap-2.5">
+        <div class="flex flex-1 gap-2.5 justify-between md:justify-start">
+          <div class="flex gap-2.5 items-center">
+            <span class="material-symbols-outlined">
+              event
+            </span>
+            <span>{{ course().startDate | date: 'mediumDate' }}</span>
+          </div>
+          <div class="flex items-center">
+            <span class="material-symbols-outlined">
+              arrow_right_alt
+            </span>
+          </div>
+          <div class="flex gap-2.5 items-center">
+            <span class="material-symbols-outlined">
+              event
+            </span>
+            <span>{{ course().endDate | date: 'mediumDate' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

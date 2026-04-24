@@ -1,33 +1,17 @@
-<!-- <div class=" py-12">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h3 class="text-2xl font-medium italic text-primary mb-8">{{'Medios de pago aceptados' | titlecase}}</h3>
-        <div class="card grid grid-cols-1 md:grid-cols-3 gap-6">
-            @for (method of methods(); track method.id) {
-            <div class="items-center p-6 bg-white  rounded-2xl border border-accent">
-                <span class="material-symbols-outlined">{{iconClass[method.method]}}</span>
-                <span class="font-bold">{{method.label}}</span>
-            </div>
-            }
+<div class="w-full">
+  <div class="bg-white/80 p-4 border border-base-200 rounded-lg w-full mt-5">
+    <div class="mx-auto text-center">
+      <h3 class="text-xl md:text-2xl font-semibold italic text-primary mb-1">
+        {{'Medios de pago aceptados' | titlecase}}
+      </h3>
+      <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+        @for (method of methods(); track method.id) {
+        <div class="flex gap-1.5 items-center">
+          <span class="material-symbols-outlined text-primary">{{iconClass[method.method]}}</span>
+          <span class="font-light text-card-text">{{method.label}}</span>
         </div>
+        }
+      </div>
     </div>
-</div> -->
-
-
-<div class="flex flex-1 justify-center">
-    <div class="bg-white/80 p-4 border border-base-200 rounded-lg w-3xl mt-7">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h3 class="text-xl md:text-2xl font-semibold italic text-primary mb-1">{{'Medios de pago aceptados' |
-                titlecase}}</h3>
-            <div class="flex justify-around gap-2.5">
-                @for (method of methods(); track method.id) {
-
-                <div class="flex gap-1.5 ">
-                    <span class="material-symbols-outlined text-primary">{{iconClass[method.method]}}</span>
-                    <span class="font-light text-primary">{{method.label}}</span>
-                </div>
-
-                }
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
