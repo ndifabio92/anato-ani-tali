@@ -27,4 +27,14 @@
     /* opcionales */
     --rounded-box: 1rem;
     --rounded-btn: 9999px;
+
+    
+}
+
+@theme {
+    --color-card-text: #313131;
+}
+
+@utility text-card-text {
+    color: var(--color-card-text);
 }

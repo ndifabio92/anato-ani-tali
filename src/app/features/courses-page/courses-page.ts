@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CourseList } from './course-list/course-list';
+import { CourseList } from './components/course-list/course-list';
 
 @Component({
   selector: 'courses-page',
