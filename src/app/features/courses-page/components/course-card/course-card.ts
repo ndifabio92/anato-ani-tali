@@ -1,14 +1,19 @@
 import { Component, computed, inject, input } from '@angular/core';
 
-import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
+import { DatePipe, TitleCasePipe } from '@angular/common';
 import { Badge } from '@app/shared/ui/badge/badge';
 import { COURSE_STATUS, CourseStatus } from '@app/core/interfaces/course-status';
 import { COURSE_TYPE, CourseDetail, STUDY_MODALITY } from '../../interfaces/course.interface';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import {
+  getCourseModality,
+  getCourseStatus,
+  getCourseStatusColor,
+} from '@app/core/utils/course.utils';
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [Badge, TitleCasePipe, CurrencyPipe, DatePipe, RouterLink],
+  imports: [Badge, TitleCasePipe, DatePipe, RouterLink],
   templateUrl: './course-card.html',
 })
 export class CourseCard {
@@ -19,31 +24,7 @@ export class CourseCard {
 
   private readonly now = new Date();
 
-  readonly status = computed(() => {
-    const start = new Date(this.course().startDate);
-    const end = new Date(this.course().endDate);
-
-    if (end < this.now) return COURSE_STATUS.FINALIZADO;
-
-    if (start <= this.now) return COURSE_STATUS.EN_CURSO;
-    return COURSE_STATUS.PROXIMAMENTE;
-  });
-
-  readonly modality = computed(() => {
-    const end = new Date(this.course().endDate);
-    return end < this.now ? STUDY_MODALITY.ASINCRONICO : this.course().modality;
-  });
-
-  readonly statusColor = computed(() => {
-    const colors: Record<CourseStatus, string> = {
-      [COURSE_STATUS.FINALIZADO]: 'text-red-700',
-      [COURSE_STATUS.EN_CURSO]: 'text-green-700',
-      [COURSE_STATUS.PROXIMAMENTE]: 'text-blue-700',
-    };
-    return colors[this.status()];
-  });
-
-  get isListPage(): boolean {
-    return !this.activateRoute.snapshot.params['slug'];
-  }
+  readonly status = computed(() => getCourseStatus(this.course(), this.now));
+  readonly modality = computed(() => getCourseModality(this.course(), this.now));
+  readonly statusColor = computed(() => getCourseStatusColor(this.status()));
 }

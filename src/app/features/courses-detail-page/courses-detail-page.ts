@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { CourseService } from '../courses-page/services/course.service';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { CourseCard } from '../courses-page/components/course-card/course-card';
 import { PaymentMethods } from '@app/shared/ui/payment-methods/payment-methods';
+import { PlanDetails } from '@app/shared/ui/plan-details/plan-details';
+import { CoursesDetailCard } from './courses-detail-card/courses-detail-card';
 
 @Component({
   selector: 'courses-detail-page',
-  imports: [CourseCard, PaymentMethods],
+  imports: [PaymentMethods, PlanDetails, CoursesDetailCard],
   templateUrl: './courses-detail-page.html',
 })
 export default class CoursesDetailPage {

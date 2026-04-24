@@ -1,0 +1,32 @@
+<div class="w-full max-w-3xl">
+  <div class="card w-full h-full bg-white/80 border border-base-200 rounded-lg">
+    <div class="card-body gap-2.5">
+
+      <h2 class="text-2xl font-semibold text-primary italic">
+        {{plan().title}}
+      </h2>
+
+      <p class="text-base-content">
+        {{plan().description}}
+      </p>
+
+      <ul class="space-y-1.5">
+        @for (item of plan().includes; track $index) {
+        <li class="flex items-start gap-2">
+          <span class="text-primary mt-1 text-xs">●</span>
+          <span>{{item}}</span>
+        </li>
+        }
+      </ul>
+
+      <div class=" flex items-center justify-between gap-2">
+        <span class="text-2xl text-base-content italic font-semibold">
+          $ {{plan().price | number:'1.0-0'}}
+        </span>
+        <a [href]="instagram()" target="_blank" class="btn btn-primary rounded-lg font-light text-sm">Más
+          Información</a>
+      </div>
+
+    </div>
+  </div>
+</div>

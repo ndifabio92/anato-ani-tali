@@ -1,4 +1,4 @@
-<div class="flex gap-7 mt-7 w-3xl ">
+<div class="flex gap-7 mt-7 w-3xl">
   <div class="indicator indicator-center w-full h-full">
 
     @if(course().badge?.label) {
@@ -9,9 +9,6 @@
       <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" alt="Movie" />
     </figure> -->
       <div class="card-body gap-2.5">
-        <!-- <div class="flex gap-2">
-          <app-badge [title]="modality() | titlecase" size="lg" type="secondary" />
-        </div> -->
         <div class="flex justify-between flex-col md:flex-row gap-2.5">
           <div class="flex gap-2.5 items-end justify-between">
             <h1 class="text-2xl font-semibold text-primary">{{ course().title | titlecase }}</h1>
@@ -22,10 +19,6 @@
           <div>
             <app-badge [title]="modality() | titlecase" size="lg" type="secondary" />
           </div>
-          <!-- @if (course().type !== courseType.REGULAR) {
-        <span class="flex text-xl">{{ course().price | currency: 'ARS' : 'symbol' : '1.0-0' }}</span>
-
-        } -->
         </div>
         <div>
           {{course().description}}
@@ -51,60 +44,13 @@
               <span>{{ course().endDate | date: 'mediumDate' }}</span>
             </div>
           </div>
-          @if(isListPage) {
           <div>
             <a class="btn btn-primary btn-block rounded-lg font-light text-sm"
               [routerLink]="['/courses', course().slug]">Más
               Información</a>
           </div>
-          }
 
         </div>
-
-        <!-- <div class="flex items-center gap-4 text-sm">
-          <div class="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span>{{ course().startDate | date: 'mediumDate' }}</span>
-          </div>
-          <span>→</span>
-          <div class="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span>{{ course().endDate | date: 'mediumDate' }}</span>
-          </div>
-        </div> -->
-        <!-- <div class="mt-2">
-          <div class="flex gap-2">
-            <h3 class="text-sm tracking-wide mb-2">Estado</h3>
-            <span class="font-bold text-sm" [class]="statusColor()">
-              {{status()}}
-            </span>
-
-          </div>
-        </div> -->
-        <!-- @if (course().plans?.length) {
-      <div class=" mt-2">
-        <h3 class="text-sm font-bold tracking-wide mb-2">Planes</h3>
-        <div class="flex flex-wrap gap-2">
-          @for (plan of course().plans; track plan.id) {
-          <div class="flex items-center justify-between bg-base-200 rounded-lg px-3 py-2 gap-4 flex-1 min-w-[140px]">
-            <span class="font-medium text-sm">{{ plan.title }}</span>
-            <span class="font-bold text-sm">{{ plan.price | currency: 'ARS' : 'symbol' : '1.0-0' }}</span>
-          </div>
-          }
-        </div>
-      </div>
-      } -->
-        <!-- <div class="mt-6">
-          <button class="btn btn-primary btn-block">Más Información</button>
-        </div> -->
       </div>
     </div>
   </div>
