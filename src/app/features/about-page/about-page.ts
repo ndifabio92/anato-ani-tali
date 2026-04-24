@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 interface Teacher {
+  alias: string;
   name: string;
   role: string;
   initial: string;
@@ -16,17 +17,19 @@ interface Teacher {
 export default class AboutPage {
   teachers: Teacher[] = [
     {
-      name: 'Tali',
+      alias: 'Tali',
+      name: 'Talita Brietzke',
       role: 'Docente de Anatomía',
       initial: 'T',
-      bgColor: 'bg-primary',
+      bgColor: 'border-primary',
       textColor: 'text-primary-content',
     },
     {
-      name: 'Ani',
+      alias: 'Ani',
+      name: 'Anabella Losardo',
       role: 'Docente de Anatomía',
       initial: 'A',
-      bgColor: 'bg-neutral',
+      bgColor: 'border-neutral',
       textColor: 'text-neutral-content',
     },
   ];

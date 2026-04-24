@@ -21,6 +21,7 @@ export type StudyModality = (typeof STUDY_MODALITY)[keyof typeof STUDY_MODALITY]
 export interface Course {
   id: number;
   title: string;
+  description: string;
   slug: string;
   price?: number;
   startDate: Date;
@@ -37,6 +38,7 @@ export interface Course {
 export interface CourseDetail {
   id: number;
   title: string;
+  description: string;
   slug: string;
   price?: number;
   startDate: Date;

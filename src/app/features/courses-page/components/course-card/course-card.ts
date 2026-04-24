@@ -1,15 +1,18 @@
-import { Component, computed, input } from '@angular/core';
-import { COURSE_TYPE, STUDY_MODALITY, CourseDetail } from '../interfaces/course.interface';
+import { Component, computed, inject, input } from '@angular/core';
+
 import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
 import { Badge } from '@app/shared/ui/badge/badge';
 import { COURSE_STATUS, CourseStatus } from '@app/core/interfaces/course-status';
+import { COURSE_TYPE, CourseDetail, STUDY_MODALITY } from '../../interfaces/course.interface';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [Badge, TitleCasePipe, CurrencyPipe, DatePipe],
+  imports: [Badge, TitleCasePipe, CurrencyPipe, DatePipe, RouterLink],
   templateUrl: './course-card.html',
 })
 export class CourseCard {
+  activateRoute = inject(ActivatedRoute);
   course = input.required<CourseDetail>();
   readonly courseType = COURSE_TYPE;
   readonly courseStatus = COURSE_STATUS;
@@ -39,4 +42,8 @@ export class CourseCard {
     };
     return colors[this.status()];
   });
+
+  get isListPage(): boolean {
+    return !this.activateRoute.snapshot.params['slug'];
+  }
 }
